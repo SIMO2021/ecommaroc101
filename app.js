@@ -416,7 +416,7 @@ function pageSignup(params) {
       <div class="field"><label for="fn">الاسم الكامل</label><input id="fn" required autocomplete="name"></div>
       <div class="field"><label for="ph">رقم الهاتف (واتساب)</label><input id="ph" type="tel" autocomplete="tel" placeholder="06XXXXXXXX"></div>
       <div class="field"><label for="em">الإيميل</label><input id="em" type="email" required autocomplete="email"></div>
-      <div class="field"><label for="pw">كلمة السر (6 حروف على الأقل)</label><input id="pw" type="password" required minlength="6" autocomplete="new-password"></div>
+      <div class="field"><label for="pw">كلمة السر (8 حروف على الأقل، فيها حروف وأرقام)</label><input id="pw" type="password" required minlength="8" pattern="(?=.*[A-Za-z])(?=.*\d).{8,}" title="8 حروف على الأقل، فيها حروف وأرقام" autocomplete="new-password"></div>
       <p class="err" id="e" hidden></p>
       <button class="btn btn-red" ${LIVE ? "" : "disabled"}>دير الحساب</button>
       <p class="muted" style="margin:0">عندك حساب؟ <a href="#/login?next=${encodeURIComponent(next)}">دخول</a></p>
@@ -455,7 +455,7 @@ function pageNewPassword() {
   view(`<section class="section"><div class="narrow" style="max-width:460px">
     <h1 style="font-size:2rem">كلمة سر جديدة</h1>
     <form class="card form" id="f">
-      <div class="field"><label for="pw">كلمة السر الجديدة</label><input id="pw" type="password" required minlength="6"></div>
+      <div class="field"><label for="pw">كلمة السر الجديدة (8 حروف على الأقل، فيها حروف وأرقام)</label><input id="pw" type="password" required minlength="8" pattern="(?=.*[A-Za-z])(?=.*\d).{8,}" title="8 حروف على الأقل، فيها حروف وأرقام" autocomplete="new-password"></div>
       <button class="btn btn-red">حفظ</button>
     </form></div></section>`);
   document.getElementById("f").addEventListener("submit", async (ev) => {
