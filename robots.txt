@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /supabase/
+
+Sitemap: https://ecommaroc101.store/sitemap.xml
